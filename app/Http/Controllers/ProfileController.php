@@ -18,7 +18,7 @@ class ProfileController extends Controller
     
     public function index()
     {
-        return view('profile.index');
+        return view('becarios.index');
     }
 
     /**
@@ -28,7 +28,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('profile.create');
+        return view('becarios.create');
     }
 
     /**

@@ -82,11 +82,11 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a href="/profile" class="dropdown-item" href="{{ route('profile') }}">
+                                    <a href="/becarios" class="dropdown-item" >
                                         <i class="bi bi-person-fill"></i> Perfil
                                     </a>
                                     <a href="#" class="dropdown-item text-danger logout" href="{{ route('logout') }}">
@@ -96,6 +96,9 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </div>
+                                <span>{{Auth::user()->name}}
+                                    <b class="caret"></b>
+                                </span>
                             </li>
                         </ul>
                     </div>
