@@ -1,83 +1,130 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Sistema Administrativo</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="/assets/vendor/template/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="/assets/vendor/template/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/template/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
+<style>
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.app-name{
+    color: #fff;
+    font-size: 15pt;
+    font-weight: bold;
+    margin-left: 25px;
+}
+</style>
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue">
+            <div class="sidebar-wrapper">
+                <div class="abs-center logo">
+                    <a href="/" class="logo-normal app-name">
+                        {{env('APP_NAME','Laravel')}}
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/home">
+                        <i class="bi bi-house-door-fill" aria-hidden="true"></i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/empresas">
+                            <i class="bi bi-building" aria-hidden="true"></i>
+                            <p>Empresas</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-minimize">
+                            <button id="minimizeSidebar" style="background: #1A659C;" class="btn btn-warning btn-fill btn-round btn-icon d-none d-lg-block">
+                                <i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
+                                <i class="fa fa-navicon visible-on-sidebar-mini"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i>
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a href="#" class="dropdown-item text-danger logout" href="{{ route('logout') }}">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
                                 </div>
                             </li>
-                        @endguest
-                    </ul>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                        @yield('content')
                 </div>
             </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+            <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <p class="copyright text-center">
+                            Copyright ©
+                            <a href="http://www.ciat.mx/portal/index.php">{{env('APP_NAME','laravel')}}</a>
+                            2022
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
     </div>
 </body>
+<!--   Core JS Files   -->
+<script src="/assets/vendor/template/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="/assets/vendor/template/js/popper.min.js" type="text/javascript"></script>
+<script src="/assets/vendor/template/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
+<script src="/assets/vendor/template/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/vendor/lodash/lodash-4-17-5.min.js" type="text/javascript"></script>
+<script src="/assets/js/common.js" type="text/javascript"></script>
+<script src="/assets/js/common-catalogs.js" type="text/javascript"></script>
+<script src="/assets/js/repositories/request.js" type="text/javascript"></script>
+
+<script type="text/javascript" charset="utf8" src="/assets/vendor/DataTables/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="/assets/vendor/DataTables/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/assets/vendor/sweetalert/sweetalert2.all.js"></script>
+<script type="text/javascript" charset="utf8" src="/assets/vendor/data-parsley/parsley.min.js"></script>
+<script type="text/javascript" charset="utf8" src="/assets/vendor/data-parsley/data-parsley-es.js"></script>
+
+<script src="/assets/vendor/select2/select2.min.js"></script>
+
+<script src="/assets/js/main.js"></script>
+@yield('js')
+
 </html>
