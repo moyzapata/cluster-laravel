@@ -10,7 +10,7 @@
 
         <style>
             .app{
-                background: #1A659C;
+                background: #2953A6;
             }
             .logo {
                 margin-left: 50px;
@@ -20,7 +20,7 @@
             }
             .first {
                 font-family: 'Nunito', sans-serif;
-                background: #1A659C;
+                background: #2953A6;
             }
             .abs-center {
                 color: #fff;
@@ -69,9 +69,9 @@
                 </div>
                 <div class="col-6 col-md-6 abs-center">
                     <center>
-                    <h2>Misión</h2>
-                    <hr>
-                    <p>mision</p>
+                        <h2>Misión</h2>
+                        <hr>
+                        <p>mision</p>
                     </center>
                 </div>
             </div>
