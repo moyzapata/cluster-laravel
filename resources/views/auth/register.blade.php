@@ -85,6 +85,20 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="cv" class="col-md-4 col-form-label text-md-end">{{ __('Curriculum bitae') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cv" type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" value="{{ old('cv') }}" required autocomplete="cv" autofocus>
+
+                                @error('cv')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

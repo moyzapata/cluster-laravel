@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Proyecto;
+use Illuminate\Support\Facades\DB;
 
-class ProfileController extends Controller
+class ProyectoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        return view('becarios.index');
+        $proyecto= Proyecto::all();
+        return view('proyecto.index')->with('proyecto', $proyecto);
     }
 
     /**
@@ -28,7 +32,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        return view('becarios.create');
+        return view('proyecto.create');
     }
 
     /**
@@ -39,7 +43,15 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $proyecto= new Proyecto();
+
+        $proyecto->nombre=$request->get('nombre');
+        $proyecto->becario=$request->get('becario');
+        $proyecto->estado=$request->get('estado');
+        $proyecto->documento=$request->get('documento');
+
+        $proyecto->save();
+        return redirect ('/proyecto');
     }
 
     /**

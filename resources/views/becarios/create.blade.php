@@ -19,7 +19,7 @@
                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" require>
                 </p>
                 <p class="col-6 col-md-6">
-                    <label for="apellidos" class="form-label">Nombre</label>
+                    <label for="apellidos" class="form-label">Apellidos</label>
                     <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Apellidos" require>
                 </p>
             </div>

@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use App\Mail\solicitudMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -51,7 +53,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'apellidos' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255'],
+            'escuela' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'cv' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -64,9 +70,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Mail::to("enriquejav306@gmail.com")->send(new solicitudMail($data));
         return User::create([
             'name' => $data['name'],
+            'apellidos' => $data['apellidos'],
+            'telefono' => $data['telefono'],
+            'escuela' => $data['escuela'],
             'email' => $data['email'],
+            'cv' => $data['cv'],
             'password' => Hash::make($data['password']),
         ]);
     }

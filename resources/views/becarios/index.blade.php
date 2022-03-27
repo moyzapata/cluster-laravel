@@ -11,7 +11,7 @@
 .circular{
     border-radius: 50%;
     max-width: 200px;
-}
+}   
 .abs-center {
   display: flex;
   align-items: center;
@@ -34,7 +34,16 @@
             <div class="v-line"></div>
         </div>
         <div class="col-4 col-md-6">
-            <h2>Mi nombre</h2>
+            <h2>{{ Auth::user()->name }}</h2>
+            <div class="row">
+                <div class="col-6 col-md-6">
+                    <label for="phone" class="form-label">Tel&eacute;fono</label>
+                    <h3 id="phone">{{ Auth::user()->name }}</h3>
+                </div>
+                <div class="col-6 col-md-6">
+                    <h3>{{ Auth::user()->name }}</h3>
+                </div>  
+            </div>
         </div>
         <div class="col-4 col-md-2">
             <a href="becarios/create" class="btn-add abs-center"><span class="bi bi-plus-circle-fill"></a>
