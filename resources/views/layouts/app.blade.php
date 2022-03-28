@@ -86,6 +86,9 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
+                                <a href="#">
+                                    <i class="bi bi-bell"></i>
+                                </a>
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i>
                                 </a>
@@ -128,25 +131,16 @@
         </div>
     </div>
 </body>
+<script>
+var popover = new bootstrap.Popover(document.querySelector('.example-popover'), {
+  container: 'body'
+})
+</script>
 <!--   Core JS Files   -->
 <script src="/assets/vendor/template/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="/assets/vendor/template/js/popper.min.js" type="text/javascript"></script>
 <script src="/assets/vendor/template/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
 <script src="/assets/vendor/template/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/assets/vendor/lodash/lodash-4-17-5.min.js" type="text/javascript"></script>
-<script src="/assets/js/common.js" type="text/javascript"></script>
-<script src="/assets/js/common-catalogs.js" type="text/javascript"></script>
-<script src="/assets/js/repositories/request.js" type="text/javascript"></script>
-
-<script type="text/javascript" charset="utf8" src="/assets/vendor/DataTables/js/jquery.dataTables.js"></script>
-<script type="text/javascript" charset="utf8" src="/assets/vendor/DataTables/js/dataTables.bootstrap4.min.js"></script>
-<script type="text/javascript" charset="utf8" src="/assets/vendor/sweetalert/sweetalert2.all.js"></script>
-<script type="text/javascript" charset="utf8" src="/assets/vendor/data-parsley/parsley.min.js"></script>
-<script type="text/javascript" charset="utf8" src="/assets/vendor/data-parsley/data-parsley-es.js"></script>
-
-<script src="/assets/vendor/select2/select2.min.js"></script>
-
-<script src="/assets/js/main.js"></script>
 @yield('js')
 
 </html>

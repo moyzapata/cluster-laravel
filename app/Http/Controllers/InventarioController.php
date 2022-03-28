@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Inventario;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class InventarioController extends Controller
 {
@@ -20,8 +21,8 @@ class InventarioController extends Controller
     
     public function index()
     {
-        $inventario = Inventario::all();
-        return view('inventario.index')->with('inventario', $inventario);
+        $inventarios = Inventario::paginate();
+        return view('inventario.index')->with('inventarios', $inventarios);
     }
 
     /**
