@@ -21,7 +21,10 @@ Auth::routes();
 
 //ruta para becarios
 Route::resource('becarios', 'App\Http\Controllers\BecariosController');
+//ruta pra proyecto
 Route::resource('proyecto', 'App\Http\Controllers\ProyectoController');
+//ruta para inventario
+Route::resource('inventario', 'App\Http\Controllers\InventarioController');
 
 Route::get('proyecto/{documento}/pdfview', [
     'uses' => function () {
@@ -35,4 +38,3 @@ Route::get('pdf', function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/inventario', [App\Http\Controllers\Inventario::class, 'index'])->name('inventario');

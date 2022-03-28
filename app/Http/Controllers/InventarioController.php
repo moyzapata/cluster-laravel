@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Inventario;
+use Illuminate\Support\Facades\DB;
 
-class Inventario extends Controller
+class InventarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +20,8 @@ class Inventario extends Controller
     
     public function index()
     {
-        return view('inventario.index');
+        $inventario = Inventario::all();
+        return view('inventario.index')->with('inventario', $inventario);
     }
 
     /**
@@ -28,7 +31,7 @@ class Inventario extends Controller
      */
     public function create()
     {
-        //
+        return view('inventario.create');
     }
 
     /**
@@ -39,7 +42,14 @@ class Inventario extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inventario= new Inventario();
+
+        $inventario->producto=$request->get('producto');
+        $inventario->descripcion=$request->get('descripcion');
+        $inventario->estado=$request->get('estado');
+
+        $inventario->save();
+        return redirect ('/inventario');
     }
 
     /**
