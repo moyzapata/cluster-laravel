@@ -86,11 +86,17 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a href="#" data-bs-toggle="popover" data-bs-placement="bottom"
-                                title="Popover title" data-bs-content="Contenido del popover">
+                                <a class="nav-link " href="#" id="notify" 
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"   >
                                     <i class="bi bi-bell"></i>
                                 </a>
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="notify">
+                                    <a href="/becarios" class="dropdown-item" >
+                                        <i class="bi bi-person-fill"></i> Perfil
+                                    </a>
+                                </div>
+                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" 
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -133,7 +139,7 @@
     </div>
 </body>
 <!--   Core JS Files   -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script> -->
 <script src="/assets/vendor/template/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="/assets/vendor/template/js/popper.min.js" type="text/javascript"></script>
 <script src="/assets/vendor/template/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
