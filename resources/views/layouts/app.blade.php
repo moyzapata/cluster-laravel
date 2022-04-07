@@ -13,7 +13,6 @@
     <link href="/assets/vendor/template/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/vendor/template/css/light-bootstrap-dashboard.css?v=2.0.1" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
 </head>
 
 <style>
@@ -77,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
                         <div class="navbar-minimize">
-                            <button id="minimizeSidebar" style="background: #1A659C;" class="btn btn-warning btn-fill btn-round btn-icon d-none d-lg-block">
+                            <button id="minimizeSidebar" style="background: #1A659C; border: none;" class="btn btn-warning btn-fill btn-round btn-icon d-none d-lg-block">
                                 <i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
                                 <i class="fa fa-navicon visible-on-sidebar-mini"></i>
                             </button>
@@ -86,20 +85,11 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link " href="#" id="notify" 
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"   >
-                                    <i class="bi bi-bell"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="notify">
-                                    <a href="/becarios" class="dropdown-item" >
-                                        <i class="bi bi-person-fill"></i> Perfil
-                                    </a>
-                                </div>
                                 <a class="nav-link" href="#" id="navbarDropdownMenuLink" 
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                     <a href="/becarios" class="dropdown-item" >
                                         <i class="bi bi-person-fill"></i> Perfil
                                     </a>
