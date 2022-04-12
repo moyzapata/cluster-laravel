@@ -20,10 +20,19 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'apellidos',
+        'domicilio',
         'telefono',
-        'escuela',
         'email',
-        'cv',
+        'ine',
+        'contacto_emergencia',
+        'escuela',
+        'const_estudiante',
+        'doc_asig_esc',
+        'nss',
+        'comprobante_nss',
+        'vac_covid',
+        'cert_vac',
+        'padecimiento',
         'password',
     ];
 

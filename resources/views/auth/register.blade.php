@@ -28,7 +28,7 @@
                 </p>
                 <p class="col-6 col-md-6">
                     <label for="apellidos" class="form-label">Apellidos</label>
-                    <input type="text" id="apellidos" name="apellidos" class="form-control @error('apellidos') is-invalid @enderror" placeholder="Apellidos" require autocomplete="apellidos" autofocus>
+                    <input type="text" id="apellidos" name="apellidos" class="form-control @error('apellidos') is-invalid @enderror" placeholder="Apellidos" require autofocus>
                     @error('apellidos')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
             <div class="row">
                 <p class="col-6 col-md-12">
                     <label for="domicilio" class="form-label">Domicilio</label>
-                    <input type="text" id="domicilio" name="domicilio" class="form-control @error('apellidos') is-invalid @enderror" placeholder="Domicilio" require autocomplete="domicilio" autofocus>
+                    <input type="text" id="domicilio" name="domicilio" class="form-control @error('apellidos') is-invalid @enderror" placeholder="Domicilio" require autofocus>
                     @error('domicilio')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -50,7 +50,7 @@
             <div class="row">
                 <p class="col-6 col-md-5">
                     <label for="telefono" class="form-label">Telefono</label>
-                    <input type="text" id="telefono" name="telefono" class="form-control @error('telefono') is-invalid @enderror" placeholder="Telefono" require autocomplete="telefono" autofocus>
+                    <input type="text" id="telefono" name="telefono" class="form-control @error('telefono') is-invalid @enderror" placeholder="Telefono" autofocus>
                     @error('telefono')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                 </p>
                 <p class="col-6 col-md-7">
                     <label for="email" class="form-label">Correo</label>
-                    <input type="text" id="email" name="email" class="form-control @error('apellidos') is-invalid @enderror" placeholder="Correo" require autocomplete="email" autofocus>
+                    <input type="text" id="email" name="email" class="form-control @error('apellidos') is-invalid @enderror" placeholder="Correo" require autofocus>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
                     <label for="ine" class="form-label">Identificación oficial (INE, IFE, Pasaporte)</label>
                 </p>
                 <p class="col-6 col-md-8">
-                    <input id="ine" type="file" class="form-control @error('ine') is-invalid @enderror" tabindex="12" name="ine" require>
+                    <input id="ine" type="file" class="form-control @error('ine') is-invalid @enderror" name="ine" require>
                     @error('ine')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -83,7 +83,7 @@
             <div class="row">
                 <p class="col-6 col-md-12">
                     <label for="contacto_emergencia" class="form-label">Contacto de emergencia</label>
-                    <input type="text" id="contacto_emergencia" name="contacto_emergencia" class="form-control @error('contacto_emergencia') is-invalid @enderror" placeholder="Datos de un contacto en caso de emergencia" require autocomplete="contacto_emergencia" autofocus>
+                    <input type="text" id="contacto_emergencia" name="contacto_emergencia" class="form-control @error('contacto_emergencia') is-invalid @enderror" placeholder="Datos de un contacto en caso de emergencia" autofocus>
                     @error('contacto_emergencia')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -94,7 +94,7 @@
             <div class="row">
                 <p class="col-6 col-md-12">
                     <label for="escuela" class="form-label">Escuela</label>
-                    <input type="text" id="escuela" name="escuela" class="form-control @error('escuela') is-invalid @enderror" placeholder="Escuela de procedencia" require autocomplete="escuela" autofocus>
+                    <input type="text" id="escuela" name="escuela" class="form-control @error('escuela') is-invalid @enderror" placeholder="Escuela de procedencia" autofocus>
                     @error('escuela')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -120,7 +120,7 @@
                     <label for="doc_asig_esc" class="form-label">Documento de asignacion escolar</label>
                 </p>
                 <p class="col-6 col-md-8">
-                    <input id="doc_asig_esc" type="file" class="form-control @error('doc_asig_esc') is-invalid @enderror" name="doc_asig_esc" require autocomplete="doc_asig_esc" autofocus>
+                    <input id="doc_asig_esc" type="file" class="form-control @error('doc_asig_esc') is-invalid @enderror" name="doc_asig_esc" require autofocus>
                     @error('doc_asig_esc')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -131,7 +131,7 @@
             <div class="row">
                 <p class="col-6 col-md-12">
                     <label for="nss" class="form-label">N&uacute;mero de seguro social</label>
-                    <input type="text" id="nss" name="nss" class="form-control @error('nss') is-invalid @enderror" placeholder="Número de seguro social" require autocomplete="nss" autofocus>
+                    <input type="text" id="nss" name="nss" class="form-control @error('nss') is-invalid @enderror" placeholder="Número de seguro social" autofocus>
                     @error('nss')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -144,7 +144,7 @@
                     <label for="comprobante_nss" class="form-label">Comprobante de seguro social</label>
                 </p>
                 <p class="col-6 col-md-8">
-                    <input id="comprobante_nss" type="file" class="form-control @error('comprobante_nss') is-invalid @enderror" name="comprobante_nss" require>
+                    <input id="comprabante_nss" type="file" class="form-control @error('comprobante_nss') is-invalid @enderror" name="comprobante_nss" autofocus>
                     @error('comprobante_nss')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

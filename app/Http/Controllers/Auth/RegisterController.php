@@ -54,11 +54,20 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'apellidos' => ['required', 'string', 'max:255'],
+            'domicilio' => ['required', 'string', 'max:255'],
             'telefono' => ['required', 'string', 'max:255'],
-            'escuela' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'cv' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            //'ine' => ['required', 'string', 'max:255'],
+            'contacto_emergencia' => ['required', 'string', 'max:255'],
+            'escuela' => ['required', 'string', 'max:255'],
+            //'const_estudiante' => ['required', 'string', 'max:255'],
+            //'doc_asig_esc' => ['required', 'string', 'email', 'max:255'],
+            'nss' => ['required', 'string', 'max:255'],
+            //'comprobante_nss' => ['required', 'string', 'max:255'],
+            'vac_covid' => ['required', 'string', 'max:255'],
+            //'cert_vac' => ['required', 'string', 'max:255'],
+            'padecimiento' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:6'],
         ]);
     }
 
@@ -74,10 +83,19 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'apellidos' => $data['apellidos'],
+            'domicilio' => $data['domicilio'],
             'telefono' => $data['telefono'],
-            'escuela' => $data['escuela'],
             'email' => $data['email'],
-            'cv' => $data['cv'],
+            'ine' => $data['ine'],
+            'contacto_emergencia' => $data['contacto_emergencia'],
+            'escuela' => $data['escuela'],
+            'const_estudiante' => $data['const_estudiante'],
+            'doc_asig_esc' => $data['doc_asig_esc'],
+            'nss' => $data['nss'],
+            'comprobante_nss' => $data['comprobante_nss'],
+            'vac_covid' => $data['vac_covid'],
+            'cert_vac' => $data['cert_vac'],
+            'padecimiento' => $data['padecimiento'],
             'password' => Hash::make($data['password']),
         ]);
     }
