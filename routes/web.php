@@ -19,8 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//ruta para becarios
-Route::resource('becarios', 'App\Http\Controllers\BecariosController');
+//ruta para solicitudes
+Route::resource('solicitudes', 'App\Http\Controllers\SolicitudesController');
 //ruta pra proyecto
 Route::resource('proyecto', 'App\Http\Controllers\ProyectoController');
 //ruta para inventario

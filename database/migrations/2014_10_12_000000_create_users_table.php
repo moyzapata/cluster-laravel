@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('contacto_emergencia', 100);
             $table->string('escuela', 100);
             $table->string('nss', 100);
-            $table->string('comprabante_nss');
+            $table->string('comprobante_nss');
             $table->string('vac_covid', 100);
             $table->string('cert_vac');
             $table->string('padecimiento', 100);

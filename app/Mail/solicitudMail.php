@@ -5,7 +5,9 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use App\Models\Solicitudes;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 
 class solicitudMail extends Mailable
 {
@@ -17,11 +19,11 @@ class solicitudMail extends Mailable
      * @return void
      */
 
-    public $data;
+    public $solicitudes;
 
-    public function __construct(array $data)
+    public function __construct(Solicitudes $solicitudes)
     {
-        $this->data = $data;
+        $this->solicitudes = $solicitudes;
     }
 
     /**
@@ -31,6 +33,6 @@ class solicitudMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.solicitud')->subject('Nueva solicitud');
+        return $this->view('mails.solicitud')->attach(Storage::path($this->solicitudes['cv']), [ 'as' => 'cv.pdf', 'mime' => 'application/pdf',])->subject('Nueva solicitud');
     }
 }

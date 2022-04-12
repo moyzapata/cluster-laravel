@@ -6,7 +6,7 @@
     <title>cliente</title>
 </head>
 <body>
-    <p>Hola! {{ $data['name'] }}.</p>
-    <p>Hola! {{ $data['comprobante_nss'] }}.</p>
+    <p>Hola! {{ $solicitudes['name'] }}.</p>
+    <a target="_blank" href="{{ $solicitudes['cv'] }}">PDF</a>
 </body>
 </html>
